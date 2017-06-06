@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MealHint</title>
+<link rel="stylesheet" href="index.css">
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="index.js"></script>
+<script src="https://apis.google.com/js/client.js?onload=init"></script>
+</head>
+<body>
+	<h1 style="text-align: center">MealHint</h1>
+	<h5 style="text-align: center">Select your dishes!</h5>
+	<div class="item-form">
+		<div class="item" id="breakfast">Breakfast</div><div class="item" id="lunch">Lunch</div><div class="item" id="dinner">Dinner</div>
+	</div>
+	<div class="item-form">
+		<div class="item" id="meat">Meat</div><div class="item" id="vegetables">Vegetables</div><div class="item" id="fruits">Fruits</div>
+	</div>
+	<div id="get-recipes-btn">Get recipes!</div>
+
+	<div id="recipes"></div>
+
+	<div id="add-btn">Add recipe</div>
+	<div id="add-frame">
+		<div id="close-frame-btn">X</div>
+		<h1 id="add-recipe-title" style="text-align: center"
+			contenteditable="true">Recipe`s title</h1>
+		<div class="item-form">
+			<div class="add item radio" id="add-breakfast">Breakfast</div><div class="add item radio" id="add-lunch">Lunch</div><div class="add item radio" id="add-dinner">Dinner</div>
+		</div>
+		<div class="item-form">
+			<div class="add item" id="add-meat">Meat</div><div class="add item" id="add-vegetables">Vegetables</div><div class="add item" id="add-fruits">Fruits</div>
+		</div>
+		<textarea id="description" maxlength="1400">Recipe`s description...</textarea>
+		<div id="add-submit">Add recipe!</div>
+	</div>
+</body>
+</html>

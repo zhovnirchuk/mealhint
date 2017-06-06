@@ -1,0 +1,188 @@
+{
+ "auth": {
+  "oauth2": {
+   "scopes": {
+    "https://www.googleapis.com/auth/userinfo.email": {
+     "description": "View your email address"
+    }
+   }
+  }
+ },
+ "basePath": "/_ah/api/mealhintAPI/v1/",
+ "baseUrl": "https://mealhint.appspot.com/_ah/api/mealhintAPI/v1/",
+ "batchPath": "batch",
+ "description": "MealHint API",
+ "discoveryVersion": "v1",
+ "icons": {
+  "x16": "http://www.google.com/images/icons/product/search-16.gif",
+  "x32": "http://www.google.com/images/icons/product/search-32.gif"
+ },
+ "id": "mealhintAPI:v1",
+ "kind": "discovery#restDescription",
+ "methods": {
+  "addRecipe": {
+   "httpMethod": "POST",
+   "id": "mealhintAPI.addRecipe",
+   "parameters": {
+    "title": {
+     "location": "query",
+     "required": true,
+     "type": "string"
+    },
+    "time": {
+     "format": "int32",
+     "location": "query",
+     "required": true,
+     "type": "integer"
+    },
+    "ingredients": {
+     "location": "query",
+     "required": true,
+     "type": "string"
+    },
+    "description": {
+     "location": "query",
+     "required": true,
+     "type": "string"
+    }
+   },
+   "path": "addRecipe",
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "getRecipes": {
+   "httpMethod": "POST",
+   "id": "mealhintAPI.getRecipes",
+   "parameters": {
+    "time": {
+     "location": "query",
+     "required": true,
+     "type": "string"
+    },
+    "ingredients": {
+     "location": "query",
+     "required": true,
+     "type": "string"
+    }
+   },
+   "path": "getRecipes",
+   "response": {
+    "$ref": "RecipeCollection"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "hasRecipe": {
+   "httpMethod": "GET",
+   "id": "mealhintAPI.hasRecipe",
+   "parameters": {
+    "title": {
+     "location": "query",
+     "required": true,
+     "type": "string"
+    }
+   },
+   "path": "hasRecipe",
+   "response": {
+    "$ref": "MessageToUser"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  }
+ },
+ "name": "mealhintAPI",
+ "parameters": {
+  "alt": {
+   "default": "json",
+   "description": "Data format for the response.",
+   "enum": [
+    "json"
+   ],
+   "enumDescriptions": [
+    "Responses with Content-Type of application/json"
+   ],
+   "location": "query",
+   "type": "string"
+  },
+  "fields": {
+   "description": "Selector specifying which fields to include in a partial response.",
+   "location": "query",
+   "type": "string"
+  },
+  "key": {
+   "description": "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.",
+   "location": "query",
+   "type": "string"
+  },
+  "oauth_token": {
+   "description": "OAuth 2.0 token for the current user.",
+   "location": "query",
+   "type": "string"
+  },
+  "prettyPrint": {
+   "default": "true",
+   "description": "Returns response with indentations and line breaks.",
+   "location": "query",
+   "type": "boolean"
+  },
+  "quotaUser": {
+   "description": "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.",
+   "location": "query",
+   "type": "string"
+  },
+  "userIp": {
+   "description": "IP address of the site where the request originates. Use this if you want to enforce per-user limits.",
+   "location": "query",
+   "type": "string"
+  }
+ },
+ "protocol": "rest",
+ "rootUrl": "https://mealhint.appspot.com/_ah/api/",
+ "schemas": {
+  "MessageToUser": {
+   "id": "MessageToUser",
+   "properties": {
+    "message": {
+     "type": "string"
+    }
+   },
+   "type": "object"
+  },
+  "Recipe": {
+   "id": "Recipe",
+   "properties": {
+    "description": {
+     "type": "string"
+    },
+    "ingredients": {
+     "type": "string"
+    },
+    "time": {
+     "format": "int32",
+     "type": "integer"
+    },
+    "title": {
+     "type": "string"
+    }
+   },
+   "type": "object"
+  },
+  "RecipeCollection": {
+   "id": "RecipeCollection",
+   "properties": {
+    "items": {
+     "items": {
+      "$ref": "Recipe"
+     },
+     "type": "array"
+    }
+   },
+   "type": "object"
+  }
+ },
+ "servicePath": "mealhintAPI/v1/",
+ "version": "v1"
+}
