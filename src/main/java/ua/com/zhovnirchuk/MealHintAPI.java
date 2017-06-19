@@ -11,7 +11,10 @@ import com.googlecode.objectify.Key;
 import com.googlecode.objectify.Objectify;
 import com.googlecode.objectify.cmd.Query;
 
-@Api(name = "mealhintAPI", version = "v1", description = "MealHint API")
+@Api(name = "mealhintAPI", version = "v1", 
+	scopes = { Constants.EMAIL_SCOPE },
+	clientIds = { Constants.WEB_CLIENT_ID, Constants.API_EXPLORER_CLIENT_ID },
+	description = "MealHint API")
 public class MealHintAPI {
 
 	private class MessageToUser implements Serializable {
